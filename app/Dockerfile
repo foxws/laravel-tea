@@ -1,6 +1,6 @@
 FROM php:8.1.13-fpm-alpine
 
-ARG USER=http
+ARG USER=tea
 ARG UID=1000
 ARG GID=$UID
 
@@ -57,7 +57,6 @@ COPY www.conf /usr/local/etc/php-fpm.d/www.conf
 RUN adduser \
     --disabled-password \
     --gecos "" \
-    --no-create-home \
     --uid "$UID" \
     "$USER"
 
