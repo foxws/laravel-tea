@@ -19,14 +19,15 @@ RUN apk add --no-cache --virtual .build-deps \
     perl-dev \
     bash \
     alpine-sdk \
-    findutils
+    findutils \
+    brotli-dev
 
 RUN set -x \
     && tar xzvf nginx.tar.gz \
     && mv /usr/local/src/nginx-${NGINX_VERSION} /usr/local/src/nginx
 
 RUN cd /usr/local/src \
-    && git clone --depth 1 git@github.com:google/ngx_brotli.git \
+    && git clone --depth 1 https://github.com/google/ngx_brotli.git \
     && MODULEDIR=$(pwd)/ngx_brotli \
     && cd /usr/local/src/nginx \
     && ./configure --with-compat $CONFARGS --add-dynamic-module=$MODULEDIR \

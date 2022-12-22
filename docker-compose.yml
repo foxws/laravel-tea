@@ -8,7 +8,6 @@ services:
     user: ${UID:-1000}:${GID:-1000}
     volumes:
       - './src:/src'
-      - '/path/to/data:/data'
     networks:
       - bridge
     depends_on:
@@ -26,7 +25,6 @@ services:
     command: php artisan schedule:work
     volumes:
       - './src:/src'
-      - '/path/to/data:/data'
     networks:
       - bridge
     depends_on:
@@ -40,7 +38,6 @@ services:
     command: php artisan horizon
     volumes:
       - './src:/src'
-      - '/path/to/data:/data'
     networks:
       - bridge
     depends_on:
@@ -63,7 +60,6 @@ services:
       - './nginx/sites:/etc/nginx/sites:ro'
       - './nginx/ssl:/etc/nginx/ssl:ro'
       - './src:/src:ro'
-      - '/path/to/data:/data:ro'
     networks:
       - bridge
   mariadb:
