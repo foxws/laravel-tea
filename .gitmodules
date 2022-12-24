@@ -1,6 +1,6 @@
 [submodule "src/api"]
 	path = src/api
-	url = git@github-foxws:foxws/laravel-boilerplate.git
+	url = git@github.com:foxws/laravel-boilerplate.git
 [submodule "src/app"]
 	path = src/app
-	url = git@github-foxws:foxws/vuejs-boilerplate.git
+	url = git@github.com:foxws/vuejs-boilerplate.git
