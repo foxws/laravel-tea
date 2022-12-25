@@ -115,6 +115,13 @@ services:
       - '9601:9601'
     networks:
       - bridge
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - bridge
 networks:
   bridge:
     driver: bridge
